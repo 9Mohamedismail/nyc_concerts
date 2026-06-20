@@ -1,55 +1,42 @@
-import React from 'react'
-import { useRoutes, Link } from 'react-router-dom'
-import Locations from './pages/Locations'
-import LocationEvents from './pages/LocationEvents'
-import Events from './pages/Events'
-import './App.css'
+import React from "react";
+import { useRoutes, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import StadiumEvents from "./pages/StadiumEvents";
+import "./App.css";
 
 const App = () => {
-  let element = useRoutes([
+  const element = useRoutes([
     {
-      path: '/',
-      element: <Locations />
+      path: "/",
+      element: <Home />,
     },
     {
-      path: '/echolounge',
-      element: <LocationEvents index={1} />
+      path: "/stadium/:stadium",
+      element: <StadiumEvents />,
     },
-    {
-      path: '/houseofblues',
-      element: <LocationEvents index={2} />
-    },
-    {
-      path: '/pavilion',
-      element: <LocationEvents index={3} />
-    },
-    {
-      path: '/americanairlines',
-      element: <LocationEvents index={4} />
-    },
-    {
-      path: '/events',
-      element: <Events />
-    }
-  ])
+  ]);
 
   return (
-    <div className='app'>
+    <div className="app">
+      <nav>
+        <ul>
+          <li>
+            <strong>NYC Concerts</strong>
+          </li>
+        </ul>
 
-      <header className='main-header'>
-        <h1>UnityGrid Plaza</h1>
+        <ul>
+          <li>
+            <Link to="/" className="contrast">
+              Home
+            </Link>
+          </li>
+        </ul>
+      </nav>
 
-        <div className='header-buttons'>
-          <Link to='/' role='button'>Home</Link>
-          <Link to='/events' role='button'>Events</Link>
-        </div>
-      </header>
-
-      <main>
-        {element}
-      </main>
+      <main>{element}</main>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

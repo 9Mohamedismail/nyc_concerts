@@ -1,33 +1,51 @@
 .app {
-    background: url('./assets/unitygrid.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+  width: min(1100px, 92%);
+  margin: 0 auto;
 }
 
-header {
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.stadium-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
-.main-header {
-    height: 30vh;
-    width: 85vw;
-    align-items: flex-end;
-    position: relative;
-    z-index: 1;
+.stadium-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.header-buttons {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
+.stadium-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 
-.header-buttons button {
-    margin-right: 20px;
-    margin-left: 20px;
+.stadium-card footer {
+  margin-top: auto;
+}
+
+.stadium-card a[role="button"] {
+  width: 100%;
+}
+
+.stadium-detail img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stadium-detail h2 {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: 94%;
+  }
+
+  .stadium-grid {
+    grid-template-columns: 1fr;
+  }
 }
