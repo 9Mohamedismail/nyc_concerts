@@ -37,11 +37,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='./walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough](./Animation.gif)
 
 Here's a walkthrough of the PSQL commands:
 
-<img src='./psql walkthrough.gif' title='PSQL Video Walkthrough' width='' alt='PSQL Video Walkthrough' />
+![PSQL Video Walkthrough](./PSQLAnimation.gif)
 
 ## Notes
 
