@@ -1,64 +1,54 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import EventCard from "./EventCard";
+import { getStadiumImage } from "../utils/stadiumImages";
 
 const StadiumEventsList = ({ events }) => {
   const stadiumInfo = events[0];
+  const stadiumImageSrc = stadiumInfo
+    ? `/${encodeURIComponent(getStadiumImage(stadiumInfo.stadium))}`
+    : "";
 
   return (
-    <section>
-      <Link to="/" className="contrast">
-        ← Back to Stadiums
+    <section className="page-section">
+      <Link to="/" className="back-link">
+        Back to Stadiums
       </Link>
 
       {stadiumInfo && (
-        <article className="stadium-detail">
-          <img src={`/${stadiumInfo.image}`} alt={stadiumInfo.stadium} />
+        <article className="detail-card">
+          <img
+            src={stadiumImageSrc}
+            alt={stadiumInfo.stadium}
+            className="detail-image"
+          />
 
-          <header>
-            <h2>{stadiumInfo.stadium}</h2>
-            <p>
-              <strong>Borough:</strong> {stadiumInfo.borough}
-            </p>
-            <p>
-              <strong>Address:</strong> {stadiumInfo.address}
-            </p>
-          </header>
+          <div className="detail-info">
+            <header>
+              <p className="eyebrow">{stadiumInfo.borough}</p>
+              <h2>{stadiumInfo.stadium}</h2>
+            </header>
 
-          <p>
-            There are {events.length} concerts happening at{" "}
-            {stadiumInfo.stadium}.
-          </p>
+            <div className="detail-meta">
+              <p>
+                <strong>Address:</strong> {stadiumInfo.address}
+              </p>
+              <p>
+                <strong>Concerts:</strong> {events.length}
+              </p>
+            </div>
+
+            <p>
+              There are {events.length} concerts happening at{" "}
+              {stadiumInfo.stadium}.
+            </p>
+          </div>
         </article>
       )}
 
-      <div className="event-grid">
+      <div className="cards-grid">
         {events.map((event) => (
-          <article className="event-card" key={event.id}>
-            <header>
-              <h3>{event.event_name}</h3>
-              <p>{event.artist}</p>
-            </header>
-
-            <p>{event.description}</p>
-
-            <footer>
-              <p>
-                <strong>Date:</strong> {event.event_date}
-              </p>
-              <p>
-                <strong>Time:</strong> {event.start_time}
-              </p>
-              <p>
-                <strong>Genre:</strong> {event.genre}
-              </p>
-              <p>
-                <strong>Price:</strong> {event.ticket_price}
-              </p>
-              <p>
-                <strong>Status:</strong> {event.status}
-              </p>
-            </footer>
-          </article>
+          <EventCard key={event.id} event={event} />
         ))}
       </div>
     </section>

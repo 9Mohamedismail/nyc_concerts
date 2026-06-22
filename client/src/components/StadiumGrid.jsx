@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllEvents } from "../services/EventsAPI";
+import { getStadiumImage } from "../utils/stadiumImages";
 
 const StadiumGrid = () => {
   const [events, setEvents] = useState([]);
@@ -28,29 +29,47 @@ const StadiumGrid = () => {
     return events.filter((event) => event.stadium === stadium).length;
   };
 
+  const getFeaturedEvent = (stadium) => {
+    return events.find((event) => event.stadium === stadium);
+  };
+
   return (
-    <div className="stadium-grid">
+    <div className="cards-grid">
       {stadiums.map((stadium) => {
         const concertCount = getConcertCount(stadium);
+        const featuredEvent = getFeaturedEvent(stadium);
+        const image = getStadiumImage(stadium);
+        const imageSrc = `/${encodeURIComponent(image)}`;
 
         return (
-          <article className="stadium-card" key={stadium}>
-            <header>
-              <h3>{stadium}</h3>
-            </header>
+          <article className="event-card venue-card" key={stadium}>
+            <img src={imageSrc} alt={stadium} className="event-card-image" />
 
-            <p>
-              There are {concertCount} concerts happening at {stadium}.
-            </p>
+            <div className="event-card-info">
+              <header>
+                <p className="eyebrow">{featuredEvent?.borough || "NYC"}</p>
+                <h3>{stadium}</h3>
+              </header>
 
-            <footer>
-              <Link
-                to={`/stadium/${encodeURIComponent(stadium)}`}
-                role="button"
-              >
-                View Events
-              </Link>
-            </footer>
+              <p className="card-description">
+                There are {concertCount} concerts happening at {stadium}.
+              </p>
+
+              {featuredEvent && (
+                <div className="card-meta">
+                  <span>{featuredEvent.address}</span>
+                </div>
+              )}
+
+              <footer className="card-actions">
+                <Link
+                  to={`/stadium/${encodeURIComponent(stadium)}`}
+                  role="button"
+                >
+                  View Events
+                </Link>
+              </footer>
+            </div>
           </article>
         );
       })}

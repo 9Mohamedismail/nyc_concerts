@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.get("/events", getEvents.getEvents);
 router.get("/events/stadium/:stadium", getEventsByStadium.getEventsByStadium);
-router.get("/events/:id", getEvent.getEvent);
+router.get("/events/:slug", getEvent.getEvent);
 
 export default router;

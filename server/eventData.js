@@ -11,7 +11,7 @@ const eventData = [
     description:
       "A spring pop concert at Yankee Stadium featuring upbeat city-inspired music.",
     ticket_price: "$85",
-    image: "yankee-stadium-concert.jpg",
+    image: "pop-concert.jpg",
     status: "Past",
   },
   {
@@ -26,7 +26,7 @@ const eventData = [
     description:
       "A high-energy reggaeton concert bringing Latin music fans together in the Bronx.",
     ticket_price: "$120",
-    image: "yankee-reggaeton-night.jpg",
+    image: "reggaeton-concert.jpg",
     status: "Upcoming",
   },
   {
@@ -41,7 +41,7 @@ const eventData = [
     description:
       "A classic rock stadium show with guitar-heavy performances and a full light show.",
     ticket_price: "$95",
-    image: "classic-rock-bronx.jpg",
+    image: "rock-concert.jpg",
     status: "Upcoming",
   },
 
@@ -57,7 +57,7 @@ const eventData = [
     description:
       "A smooth R&B concert night featuring vocals, live instruments, and Brooklyn energy.",
     ticket_price: "$75",
-    image: "barclays-rnb-live.jpg",
+    image: "rnb-concert.jpg",
     status: "Past",
   },
   {
@@ -72,7 +72,7 @@ const eventData = [
     description:
       "An electronic dance concert with heavy bass, lasers, and a packed arena crowd.",
     ticket_price: "$65",
-    image: "brooklyn-bass-drop.jpg",
+    image: "edm-concert.jpg",
     status: "Upcoming",
   },
   {
@@ -87,7 +87,7 @@ const eventData = [
     description:
       "A major pop tour stop at Barclays Center with dancers, visuals, and live vocals.",
     ticket_price: "$110",
-    image: "borough-tour-barclays.jpg",
+    image: "pop-tour-concert.jpg",
     status: "Upcoming",
   },
   {
@@ -102,7 +102,7 @@ const eventData = [
     description:
       "An indie rock showcase featuring rising bands from across New York City.",
     ticket_price: "$55",
-    image: "brooklyn-indie-showcase.jpg",
+    image: "indie-rock-concert.jpg",
     status: "Upcoming",
   },
 
@@ -118,7 +118,7 @@ const eventData = [
     description:
       "A Queens-centered hip-hop concert with local openers and a stadium headline set.",
     ticket_price: "$90",
-    image: "citi-field-hiphop.jpg",
+    image: "hiphop-concert.jpg",
     status: "Past",
   },
   {
@@ -133,7 +133,7 @@ const eventData = [
     description:
       "A summer country concert with acoustic sets, full-band performances, and food vendors.",
     ticket_price: "$70",
-    image: "citi-field-country-jam.jpg",
+    image: "country-concert.jpg",
     status: "Upcoming",
   },
 
@@ -149,7 +149,7 @@ const eventData = [
     description:
       "An outdoor-style alternative concert hosted at one of Queens' most recognizable venues.",
     ticket_price: "$60",
-    image: "usta-night-court-concert.jpg",
+    image: "alternative-concert.jpg",
     status: "Upcoming",
   },
 
@@ -165,7 +165,7 @@ const eventData = [
     description:
       "An uptown concert experience mixing jazz, funk, brass, and community celebration.",
     ticket_price: "$40",
-    image: "armory-rhythm-fest.jpg",
+    image: "jazz-concert.jpg",
     status: "Upcoming",
   },
 
@@ -181,7 +181,7 @@ const eventData = [
     description:
       "A major pop concert at Madison Square Garden with a full arena production.",
     ticket_price: "$130",
-    image: "msg-pop-night.jpg",
+    image: "pop-tour-concert.jpg",
     status: "Past",
   },
   {
@@ -196,7 +196,7 @@ const eventData = [
     description:
       "A headline rap concert with surprise guests and NYC-themed stage visuals.",
     ticket_price: "$115",
-    image: "garden-rap-showcase.jpg",
+    image: "rap-concert.jpg",
     status: "Upcoming",
   },
   {
@@ -211,7 +211,7 @@ const eventData = [
     description:
       "A stripped-down acoustic performance in one of New York City's most famous arenas.",
     ticket_price: "$80",
-    image: "msg-acoustic-night.jpg",
+    image: "acoustic-concert.jpg",
     status: "Upcoming",
   },
 
@@ -227,7 +227,7 @@ const eventData = [
     description:
       "A colorful synth pop concert at Forest Hills Stadium with summer festival energy.",
     ticket_price: "$68",
-    image: "forest-hills-summer-stage.jpg",
+    image: "synth-pop-concert.jpg",
     status: "Past",
   },
   {
@@ -242,7 +242,7 @@ const eventData = [
     description:
       "An indie concert night featuring mellow vocals, guitar-driven sets, and outdoor vibes.",
     ticket_price: "$58",
-    image: "queens-indie-night.jpg",
+    image: "indie-night-concert.jpg",
     status: "Upcoming",
   },
 ];

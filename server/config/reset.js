@@ -2,12 +2,20 @@ import "dotenv/config";
 import { pool } from "./database.js";
 import eventData from "../eventData.js";
 
+const createSlug = (value) => {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
 const createEventsTable = async () => {
   const createTableQuery = `
         DROP TABLE IF EXISTS events;
 
         CREATE TABLE IF NOT EXISTS events (
             id SERIAL PRIMARY KEY,
+            event_slug VARCHAR(255) UNIQUE NOT NULL,
             event_name VARCHAR(255) NOT NULL,
             artist VARCHAR(255) NOT NULL,
             borough VARCHAR(255) NOT NULL,
@@ -40,11 +48,13 @@ const seedEventsTable = async () => {
   }
 
   eventData.forEach((event) => {
+    const eventSlug = createSlug(event.event_name);
     const insertQuery = {
-      text: "INSERT INTO events (event_name, artist, borough, stadium, address, event_date, start_time, genre, description, ticket_price, image, status) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)",
+      text: "INSERT INTO events (event_slug, event_name, artist, borough, stadium, address, event_date, start_time, genre, description, ticket_price, image, status) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)",
     };
 
     const values = [
+      eventSlug,
       event.event_name,
       event.artist,
       event.borough,

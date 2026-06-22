@@ -9,8 +9,8 @@ const getAllEvents = async () => {
   return data;
 };
 
-const getEventById = async (id) => {
-  const response = await fetch(`/api/events/${id}`);
+const getEventBySlug = async (slug) => {
+  const response = await fetch(`/api/events/${encodeURIComponent(slug)}`);
 
   if (!response.ok) {
     throw new Error("Failed to fetch event");
@@ -33,4 +33,4 @@ const getEventsByStadium = async (stadium) => {
   return data;
 };
 
-export { getAllEvents, getEventById, getEventsByStadium };
+export { getAllEvents, getEventBySlug, getEventsByStadium };

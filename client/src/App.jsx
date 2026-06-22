@@ -1,6 +1,8 @@
 import React from "react";
 import { useRoutes, Link } from "react-router-dom";
 import Home from "./pages/Home";
+import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
 import StadiumEvents from "./pages/StadiumEvents";
 import "./App.css";
 
@@ -11,6 +13,14 @@ const App = () => {
       element: <Home />,
     },
     {
+      path: "/events",
+      element: <Events />,
+    },
+    {
+      path: "/events/:slug",
+      element: <EventDetail />,
+    },
+    {
       path: "/stadium/:stadium",
       element: <StadiumEvents />,
     },
@@ -18,23 +28,36 @@ const App = () => {
 
   return (
     <div className="app">
-      <nav>
-        <ul>
-          <li>
-            <strong>NYC Concerts</strong>
-          </li>
-        </ul>
+      <header className="app-hero">
+        <nav className="app-nav" aria-label="Primary navigation">
+          <Link to="/" className="brand-link">
+            NYC Concerts
+          </Link>
 
-        <ul>
-          <li>
-            <Link to="/" className="contrast">
+          <div className="nav-links">
+            <Link to="/" className="nav-link">
               Home
             </Link>
-          </li>
-        </ul>
-      </nav>
+            <Link to="/events" className="nav-link">
+              Events
+            </Link>
+          </div>
+        </nav>
 
-      <main>{element}</main>
+        <div className="app-hero-content">
+          <h1>NYC Concerts</h1>
+          <div className="hero-actions">
+            <Link to="/" role="button">
+              Browse Stadiums
+            </Link>
+            <Link to="/events" role="button" className="secondary">
+              All Events
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="app-main">{element}</main>
     </div>
   );
 };
