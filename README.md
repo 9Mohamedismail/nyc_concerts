@@ -37,9 +37,15 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
+<img src='./Animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Here's a walkthrough of the PSQL commands:
+
+<img src='./PSQLAnimation.gif' title='PSQL Video Walkthrough' width='' alt='PSQL Video Walkthrough' />
+
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+Creating CSS in a short amount of time for the task was a challenge.
 
 ## License
 
